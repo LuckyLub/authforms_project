@@ -13,7 +13,8 @@ def frontpage(request):
 
     url= f"https://api.nytimes.com/svc/topstories/v2/{topic}.json?api-key={api_key}"
     res = requests.get(url).json()
-    context["results"] = res["results"]
+    if "fault" not in res.keys():
+        context["results"] = res["results"]
 
     return render(request, "frontpage.html", context)
 
