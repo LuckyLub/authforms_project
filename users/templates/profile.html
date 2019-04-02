@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table">
+  <tbody>
+  <tr>
+      <td scope="col">User name:</td>
+      <td>{{user.username}}</td>
+  </tr>
+
+  <tr>
+      <td scope="col">First name:</td>
+      <td>{{user.first_name}}</td>
+  </tr>
+
+  <tr>
+      <td scope="col">Last name:</td>
+      <td>{{user.last_name}}</td>
+  </tr>
+
+  <tr>
+      <td scope="col">E-mail:</td>
+      <td>{{user.email}}</td>
+  </tr>
+
+  <tr>
+      <form action="{% url 'users:profile' %}" method="post">
+          {% csrf_token %}
+          <td scope="col">API-key:</td>
+          <td><input type="password" name="API-key" value="{{user.profile.api_key}}"><input type="submit" value="Submit"></td>
+      </form>
+  </tr>
+
+    <tr>
+      <form action="{% url 'users:profile' %}" method="post">
+          {% csrf_token %}
+          <td scope="col">Topic of preference:</td>
+          <td><input type="text" name="topic" value="{{user.profile.topic}}"><input type="submit" value="Submit"></td>
+      </form>
+  </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+{% endblock %}

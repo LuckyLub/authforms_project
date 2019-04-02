@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div class="container">
+
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="background-color: #e3f2fd;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">Hello, {{ user.username }}.<a/>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{% url 'authform:frontpage' %}">Front page </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{% url 'users:profile' %}">Profile </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout' %}"> Log out</a>
+            </li>
+            {% else %}
+             <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:login' %}">Log in</a>
+             </li>
+            {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+ </div>
+
+ <div class="container">
+    <h3>AuthForms</h3>
+    {% block content %}
+
+    {% endblock %}
+ </div>
+</body>
+</html>

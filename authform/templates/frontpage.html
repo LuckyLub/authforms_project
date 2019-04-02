@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Home Page</h1>
+
+{% for article in results %}
+
+<a href="{{article.url}}">{{article.title}}</a>
+<p>{{article.abstract}}</p>
+
+
+{% endfor %}
+
+
+{% endblock %}
