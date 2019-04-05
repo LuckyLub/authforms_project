@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class AuthformConfig(AppConfig):
-    name = 'authforms'
+    name = 'authforms_app'
