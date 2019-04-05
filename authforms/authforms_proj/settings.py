@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #my apps:
-    'authforms_app',
+    'authforms',
     'users',
 ]
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'authforms_proj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "authforms_app/templates"),
+        'DIRS': [os.path.join(BASE_DIR, "authforms/templates"),
                  os.path.join(BASE_DIR, "users/templates")],
 
         'APP_DIRS': True,

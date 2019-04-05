@@ -18,7 +18,7 @@ from django.urls import path, include
 from . import views
 
 
-app_name = 'authforms_app'
+app_name = 'authforms'
 
 urlpatterns = [
     path('', views.frontpage, name="frontpage"),
