@@ -5,6 +5,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button name="submit">register</button>
-    <input type="hidden" name="next" value="{% url 'authforms_app:frontpage' %}" />
+    <input type="hidden" name="next" value="{% url 'authforms:frontpage' %}" />
     </form>
 {% endblock content %}
