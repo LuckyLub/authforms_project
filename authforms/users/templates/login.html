@@ -11,7 +11,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button name="submit">log in</button>
-            <input type="hidden" name="next" value="{% url 'authforms_:frontpage' %}" />
+            <input type="hidden" name="next" value="{% url 'authforms:frontpage' %}" />
         </form>
 
         No account yet?<a href="{% url 'users:register' %}"> Register here.</a>
