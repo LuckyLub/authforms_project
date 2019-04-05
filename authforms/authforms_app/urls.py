@@ -1,4 +1,4 @@
-"""authforms URL Configuration
+"""authforms_proj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -18,7 +18,7 @@ from django.urls import path, include
 from . import views
 
 
-app_name = 'authform'
+app_name = 'authforms_app'
 
 urlpatterns = [
     path('', views.frontpage, name="frontpage"),
